@@ -1,0 +1,23 @@
+<%= simple_form_for(profile_path(current_user), html: { multipart: true }) do |f| %>
+   <%#we have to make sure user_id = profile_id %>
+  <%#this is for the image uploading%>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2> <%= pluralize(@profile.errors.count, "error") %>
+      This post shall be preventd from saving </h2>
+      <ul>
+        <% @profile.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%#= f.input :image, input_html: {class: 'form-control'} %>
+    <%= f.input :name, input_html: {class: 'form-control'} %>
+    <%= f.input :about, input_html: {class: 'form-control'} %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+
+<% end %>

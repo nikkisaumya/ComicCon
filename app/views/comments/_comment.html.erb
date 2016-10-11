@@ -1,0 +1,11 @@
+<body>
+<p style="margin-left:20px"><%= comment.comment %>
+  <span>
+    <b><%= comment.user.email %></b>
+    <%#= link_to "Edit" , edit_post_comment_path(comment.post, comment) %>
+    <%= link_to "remome comment" , [comment.post, comment], method: :delete %> 
+  </span>
+</p>
+
+
+</body>

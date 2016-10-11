@@ -1,0 +1,11 @@
+<h3><%= current_user.email.split('@')[0] %></h3>
+<%# render profile/show(@user ie the current_user) %>
+<%= link_to "update profile", new_profile_path, method: :put, :class => 'btn btn-default', :class => 'btn btn-default' %> 
+<div class="panel-body">
+  <h1> 
+    <%#= current_user.profile.name %>  
+  </h1>
+  <p> 
+    <%#= @profile.about %>
+  </p>
+</div>

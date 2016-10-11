@@ -1,0 +1,22 @@
+<%= simple_form_for(@post, html: {multipart: true} ) do |f| %>
+<%#this is for the image uploading%>
+	<% if @post.errors.any? %>
+		<div id="error_explanation">
+			<h2> <%= pluralize(@post.errors.count, "error") %>
+			This post shall be preventd from saving </h2>
+			<ul>
+				<% @post.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<div class="form-group">
+		<%= f.input :image, input_html: {class: 'form-control'} %>
+		<%= f.input :title, input_html: {class: 'form-control'} %>
+		<%= f.input :description, input_html: {class: 'form-control'} %>
+		<%= f.button :submit,  class: "btn btn-primary" %>
+	</div>
+
+<% end %>

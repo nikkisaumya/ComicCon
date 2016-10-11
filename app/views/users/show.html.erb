@@ -1,0 +1,23 @@
+<style>
+.box{
+  background: none;
+  background-color: transparent
+}
+.panel{
+  border:none;
+  border-radius:none
+}
+.col3{width:180px;}
+</style>m
+<h3><%= current_user.email.split('@')[0] %></h3>
+<%# render profile/show(@user ie the current_user) %>
+<%= link_to "update profile", new_profile_path, method: :put, :class => 'btn btn-default', :class => 'btn btn-default' %> 
+<div class="panel-body">
+  <h1> 
+    <%#= current_user.profile.name %>  
+  </h1>
+  <p> 
+    <%#= @profile.about %>
+  </p>
+</div>
+<%= render 'posts/userpost', obj: @user.posts %>
